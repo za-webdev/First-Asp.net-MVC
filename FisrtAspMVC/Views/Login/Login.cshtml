@@ -1,0 +1,18 @@
+﻿@model FisrtAspMVC.Models.User
+
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<h2>Login</h2>
+<form method="post" action="/Login/Index">
+
+
+    UserName:<input type="text" name="Name" value=" @ViewBag.Name" />
+    Password:<input type="password" name="Password" />
+    <button type ="submit" >Submit</button>
+
+    @ViewData["invalid"]
+</form>

@@ -1,0 +1,41 @@
+﻿
+@model List<FisrtAspMVC.Models.User>;
+@{
+    ViewData["Title"] = "Show";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<h2>Show</h2>
+@{
+    var obj = (FisrtAspMVC.Models.User)ViewData["user"];
+
+}
+
+
+@{
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+        </tr>
+        @{
+            for (int i = 0; i < Model.Count(); i++)
+            {
+                <tr>
+                    <td>@Model[i].Id</td>
+                    <td>@Model[i].Name</td>
+
+                </tr>
+            }
+        }
+    </table>
+    <p>User Name : @ViewBag.Message</p> 
+}
+
+@section footer
+    {
+    <p>This is footer</p>
+        <a href="/Login/Logout">LogOut</a>
+}
+
+

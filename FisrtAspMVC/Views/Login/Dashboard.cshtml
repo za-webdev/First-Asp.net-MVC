@@ -1,0 +1,36 @@
+﻿@model List<FisrtAspMVC.Models.Student> 
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<h2>Dashboard</h2>
+
+<a href="/Login/Logout">LogOut</a>
+
+<p>Admin Id: @ViewBag.Id</p>
+<p>Adin Name: @ViewBag.Name</p>
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Decsription</th>
+        <th>Student Code</th>
+        <th>Enrolled At</th>
+    </tr>
+    @{ 
+        foreach(var stu in Model)
+        {
+            <tr>
+                <td>@stu.Id</td>
+                <td>@stu.Name</td>
+                <td>@stu.Description</td>
+                <td>@stu.StudentCode</td>
+                <td>@stu.CreatedAt</td>
+            </tr>
+        }
+    }
+</table>
+
+<a href=""></a>
